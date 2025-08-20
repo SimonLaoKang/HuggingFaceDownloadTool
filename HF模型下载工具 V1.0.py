@@ -328,14 +328,14 @@ class HFDownloaderGUI(QWidget):
         idm_layout = QHBoxLayout()
         self.idm_path_label = QLabel("IDM路径：未设置")
         self.idm_choose_btn = QPushButton("选择IDM路径")
-        self.idm_choose_btn.clicked.connect(self.choose_idm_path)
+        self.idm_choose_btn。clicked。connect(self.choose_idm_path)
         idm_layout.addWidget(self.idm_path_label)
         idm_layout.addWidget(self.idm_choose_btn)
         layout.addLayout(idm_layout)
     
         # 日志区
         self.log_box = QTextEdit()
-        self.log_box.setReadOnly(True)
+        self.log_box。setReadOnly(True)
         layout.addWidget(QLabel("日志："))
         layout.addWidget(self.log_box)
 
@@ -356,7 +356,7 @@ class HFDownloaderGUI(QWidget):
         # URL编码选项
         action_btn_layout = QHBoxLayout()
         self.encode_checkbox = QCheckBox("下载地址使用URL编码(兼容好)")
-        self.encode_checkbox.setChecked(True)
+        self.encode_checkbox。setChecked(True)
         action_btn_layout.addWidget(self.encode_checkbox)
 
         # 自动开始下载选项
@@ -367,22 +367,22 @@ class HFDownloaderGUI(QWidget):
         # 按钮区
         self.export_btn = QPushButton("导出下载链接")
         action_btn_layout.addWidget(self.export_btn)
-        self.download_btn = QPushButton("导入IDM下载")
+        self.download_btn = QPushButton("导入IDM队列")
         action_btn_layout.addWidget(self.download_btn)
         layout.addLayout(action_btn_layout)
         self.setLayout(layout)
     
         # 事件绑定
-        self.load_btn.clicked.connect(self.load_file_list)
+        self.load_btn.clicked。connect(self.load_file_list)
         self.select_toggle_btn.clicked.connect(self.toggle_select_all)
-        self.file_tree_widget.itemChanged.connect(self.on_tree_item_changed)
-        self.export_btn.clicked.connect(self.export_download_links)
-        self.download_btn.clicked.connect(self.batch_multithread_download)
+        self.file_tree_widget。itemChanged.connect(self.on_tree_item_changed)
+        self.export_btn。clicked.connect(self.export_download_links)
+        self.download_btn.clicked。connect(self.batch_multithread_download)
         path_label.mousePressEvent = self.choose_download_path_event
-        self.download_path_label.mousePressEvent = self.choose_download_path_event
+        self.download_path_label。mousePressEvent = self.choose_download_path_event
     
         # 右键菜单
-        self.file_tree_widget.setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
+        self.file_tree_widget。setContextMenuPolicy(Qt.ContextMenuPolicy.CustomContextMenu)
         self.file_tree_widget.customContextMenuRequested.connect(self.on_tree_right_click)
      
     def is_real_idm_exe(path):
@@ -771,4 +771,5 @@ if __name__ == "__main__":
         win.show()
         sys.exit(app.exec())
     except Exception as e:
+
         print(f"主线程异常: {e}")
