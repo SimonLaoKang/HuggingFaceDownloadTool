@@ -1,8 +1,11 @@
-# HF模型下载工具 V1.0
+# HuggingFace、hf-mirror模型下载工具 V1.0
 
 ## 简介
 
 本工具用于批量下载 HuggingFace 上的模型或数据集文件，支持原始地址和镜像地址，集成 IDM（Internet Download Manager）实现高速下载。支持导出下载链接、批量导入 IDM 队列、自动识别仓库类型、文件树选择、URL 编码等功能。
+
+借鉴于：https://www.bilibili.com/opus/1039284619941249065、https://github.com/CFSO7322/huggingface-download-tool/tree/main
+并在这里扩展到数据集和模型，理论上基本都能下到。
 
 ## 主要功能
 
